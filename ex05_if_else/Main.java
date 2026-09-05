@@ -1,4 +1,4 @@
-package exercicio04;
+package ex05_if_else;
 import java.util.Scanner;
 
 public class Main {
@@ -13,11 +13,14 @@ public class Main {
 
         double media = (n1 + n2) / 2;
 
-        // Operador ternario: condicao ? valorSeVerdadeiro : valorSeFalso
-        String resultado = (media >= 6) ? "Aprovado" : "Reprovado";
-
         System.out.println("Media: " + media);
-        System.out.println("Situacao: " + resultado);
+
+        // (util quando a acao precisa de mais de uma linha)
+        if (media >= 6) {
+            System.out.println("Situacao: Aprovado");
+        } else {
+            System.out.println("Situacao: Reprovado");
+        }
 
         sc.close();
     }

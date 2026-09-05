@@ -1,9 +1,9 @@
-package exercicio03;
+package ex03_operadores_relacionais;
 
 public class Main {
     public static void main(String[] args) {
         int a = 5;
-        int b = 8;
+        int b = 3;
 
         // Operadores relacionais (comparacao) -> sempre retornam boolean
         System.out.println("a == b: " + (a == b));

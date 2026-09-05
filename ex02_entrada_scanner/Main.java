@@ -1,4 +1,4 @@
-package exercicio02;
+package ex02_entrada_scanner;
 import java.util.Scanner;
 
 public class Main {
@@ -7,6 +7,7 @@ public class Main {
 
         System.out.print("Digite sua idade: ");
         int idade = sc.nextInt();
+        sc.nextLine();
 
         System.out.print("Digite seu nome: ");
         String nome = sc.nextLine();

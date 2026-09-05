@@ -1,4 +1,4 @@
-package exercicio01;
+package ex01_saida_escape;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-# Exercício 06 — Soma de Notas com Função
+# Exercício 10 — Soma de Notas com Função
 
 ## Enunciado
 

@@ -1,4 +1,4 @@
-package exercicio06;
+package ex10_funcoes_soma;
 import java.util.Scanner;
 
 public class Main {
