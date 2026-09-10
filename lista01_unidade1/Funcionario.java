@@ -1,5 +1,3 @@
-package lista01_unidade1;
-
 public class Funcionario {
     private String nome;
     private double salario;
@@ -25,7 +23,7 @@ public class Funcionario {
     }
 
     public static void main(String[] args) {
-        Funcionario f = new Funcionario("Carlos", 2500);
+        Funcionario f = new Funcionario("Carlos", 999);
         System.out.println("Bônus: " + f.calcularBonus());
     }
 }

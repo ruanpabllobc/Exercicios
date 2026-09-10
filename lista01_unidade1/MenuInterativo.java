@@ -1,4 +1,3 @@
-package lista01_unidade1;
 import java.util.Scanner;
 
 public class MenuInterativo {

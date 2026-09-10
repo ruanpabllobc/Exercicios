@@ -1,5 +1,3 @@
-package lista01_unidade1;
-
 public class Estoque {
     private String nomeProduto;
     private int quantidadeMinima;
@@ -23,17 +21,15 @@ public class Estoque {
     }
 
     public void simularVendas(int dias, int vendasPorDia) {
-        int dia = 1;
-        while (dia <= dias && getQuantidadeAtual() > 0) {
+        for (int dia = 1; dia <= dias && getQuantidadeAtual() > 0; dia++) {
             setQuantidadeAtual(getQuantidadeAtual() - vendasPorDia);
             System.out.println("Dia " + dia + " - Estoque: " + getQuantidadeAtual());
-            dia++;
         }
     }
 
     public static void main(String[] args) {
         Estoque e = new Estoque("Parafuso", 20, 50);
-        e.simularVendas(10, 5);
+        e.simularVendas(10, 1);
         System.out.println("Precisa reabastecer? " + e.precisaReabastecer());
     }
 }

@@ -1,5 +1,3 @@
-package lista01_unidade1;
-
 public class Triangulo {
     private double ladoA, ladoB, ladoC;
 

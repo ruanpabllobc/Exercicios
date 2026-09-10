@@ -1,5 +1,3 @@
-package lista01_unidade1;
-
 public class Contador {
     private int limite;
 
