@@ -9,5 +9,5 @@ unidade1/
 ├── lista01_unidade1/      # lista 01 (enunciado em Lista01_Unidade1.pdf)
 └── Lista01_Unidade1.pdf
 unidade2/
-└── lista01_unidade2/      # arrays (enunciados em questoes.md)
+└── lista01_unidade2/      # arrays, ArrayList e herança (enunciados em questoes.md)
 ```

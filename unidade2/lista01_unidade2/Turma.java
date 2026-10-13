@@ -8,9 +8,6 @@ public class Turma {
     }
 
     public String getNomeDisciplina() { return nomeDisciplina; }
-    public void setNomeDisciplina(String nomeDisciplina) { this.nomeDisciplina = nomeDisciplina; }
-    public double[] getNotas() { return notas; }
-    public void setNotas(double[] notas) { this.notas = notas; }
 
     public double calcularMedia() {
         double soma = 0;

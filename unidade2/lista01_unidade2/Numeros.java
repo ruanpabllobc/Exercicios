@@ -5,9 +5,6 @@ public class Numeros {
         this.valores = valores;
     }
 
-    public int[] getValores() { return valores; }
-    public void setValores(int[] valores) { this.valores = valores; }
-
     public void exibir() {
         for (int i = 0; i < valores.length; i++) {
             System.out.println(valores[i]);

@@ -1,0 +1,5 @@
+# Configurações locais do editor
+.vscode/
+
+# Arquivos compilados
+*.class

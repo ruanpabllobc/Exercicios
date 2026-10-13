@@ -8,9 +8,6 @@ public class Temperaturas {
     }
 
     public String getCidade() { return cidade; }
-    public void setCidade(String cidade) { this.cidade = cidade; }
-    public double[] getValores() { return valores; }
-    public void setValores(double[] valores) { this.valores = valores; }
 
     public double maiorTemperatura() {
         double maior = valores[0];
