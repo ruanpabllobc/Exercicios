@@ -9,23 +9,23 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public String getTitular() { return titular; }
-    public double getSaldo() { return saldo; }
+    public String getTitular() { return this.titular; }
+    public double getSaldo() { return this.saldo; }
 
     public void depositar(double valor) {
-        saldo += valor;
+        this.saldo += valor;
     }
 
-    // Conta comum só pode usar o próprio saldo
+    // Conta comum so pode usar o proprio saldo
     public double saldoDisponivel() {
-        return saldo;
+        return this.saldo;
     }
 
     public boolean sacar(double valor) {
         if (valor > saldoDisponivel()) {
             return false;
         }
-        saldo -= valor;
+        this.saldo -= valor;
         return true;
     }
 
@@ -39,6 +39,6 @@ public class Conta {
 
     @Override
     public String toString() {
-        return titular + ": R$ " + saldo;
+        return this.titular + ": R$ " + this.saldo;
     }
 }

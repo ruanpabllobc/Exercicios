@@ -8,12 +8,12 @@ public class Moto extends Veiculo {
         this.cilindradas = cilindradas;
     }
 
-    public int getCilindradas() { return cilindradas; }
+    public int getCilindradas() { return this.cilindradas; }
 
     @Override
     public double calcularIPVA() {
-        // a isenção já é tratada na versão de Veiculo
-        if (cilindradas <= 160) {
+        // a isencao ja e tratada na versao de Veiculo
+        if (this.cilindradas <= 160) {
             return super.calcularIPVA() / 2;
         }
         return super.calcularIPVA();
@@ -21,6 +21,6 @@ public class Moto extends Veiculo {
 
     @Override
     public String toString() {
-        return super.toString() + "\nCilindradas: " + cilindradas;
+        return super.toString() + "\nCilindradas: " + this.cilindradas;
     }
 }

@@ -8,11 +8,11 @@ public class Bateria extends Instrumento {
 
     @Override
     public String getFamilia() {
-        return "percussão";
+        return "percussao";
     }
 
     @Override
     public void tocar() {
-        System.out.println(getNome() + ": tum tum tá!");
+        System.out.println(getNome() + ": tum tum ta!");
     }
 }

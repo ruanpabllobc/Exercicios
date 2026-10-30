@@ -11,12 +11,12 @@ public class Horario {
         this(horas, 0);
     }
 
-    public int getHoras() { return horas; }
-    public int getMinutos() { return minutos; }
+    public int getHoras() { return this.horas; }
+    public int getMinutos() { return this.minutos; }
 
     public void adicionar(int minutos) {
-        int total = horas * 60 + this.minutos + minutos;
-        horas = (total / 60) % 24;
+        int total = this.horas * 60 + this.minutos + minutos;
+        this.horas = (total / 60) % 24;
         this.minutos = total % 60;
     }
 
@@ -24,28 +24,20 @@ public class Horario {
         adicionar(horas * 60 + minutos);
     }
 
-    public void adicionar(Horario outro) {
-        adicionar(outro.getHoras(), outro.getMinutos());
-    }
-
     @Override
     public String toString() {
-        return String.format("%02d:%02d", horas, minutos);
+        return String.format("%02d:%02d", this.horas, this.minutos);
     }
 
     public static void main(String[] args) {
         Horario aula = new Horario(7, 30);
-        System.out.println("Início: " + aula);
+        System.out.println("Inicio: " + aula);
 
         aula.adicionar(50);
         System.out.println("+ 50 min: " + aula);
 
         aula.adicionar(1, 45);
         System.out.println("+ 1h45: " + aula);
-
-        Horario intervalo = new Horario(2);
-        aula.adicionar(intervalo);
-        System.out.println("+ " + intervalo + ": " + aula);
 
         Horario noite = new Horario(23, 50);
         noite.adicionar(20);

@@ -8,10 +8,10 @@ public class Gerente extends Funcionario {
         this.bonus = bonus;
     }
 
-    public double getBonus() { return bonus; }
+    public double getBonus() { return this.bonus; }
 
     @Override
     public double calcularSalario() {
-        return getSalarioBase() + bonus;
+        return getSalarioBase() + this.bonus;
     }
 }

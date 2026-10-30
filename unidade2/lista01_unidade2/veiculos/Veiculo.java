@@ -13,24 +13,24 @@ public class Veiculo {
         this.valor = valor;
     }
 
-    public String getMarca() { return marca; }
-    public String getModelo() { return modelo; }
-    public int getAno() { return ano; }
-    public double getValor() { return valor; }
+    public String getMarca() { return this.marca; }
+    public String getModelo() { return this.modelo; }
+    public int getAno() { return this.ano; }
+    public double getValor() { return this.valor; }
 
     public boolean ehIsento() {
-        return ano < 2005;
+        return this.ano < 2005;
     }
 
     public double calcularIPVA() {
         if (ehIsento()) {
             return 0;
         }
-        return valor * 4 / 100;
+        return this.valor * 4 / 100;
     }
 
     @Override
     public String toString() {
-        return "Marca: " + marca + " | Modelo: " + modelo + " | Ano: " + ano;
+        return "Marca: " + this.marca + " | Modelo: " + this.modelo + " | Ano: " + this.ano;
     }
 }

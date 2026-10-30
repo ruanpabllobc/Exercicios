@@ -11,20 +11,20 @@ public class Agenda {
 
     public void adicionarContato(Contato c) {
         if (buscarPorNome(c.getNome()) != null) {
-            System.out.println(c.getNome() + " já está na agenda");
+            System.out.println(c.getNome() + " ja esta na agenda");
         } else {
-            contatos.add(c);
+            this.contatos.add(c);
         }
     }
 
     public void listarContatos() {
-        for (Contato c : contatos) {
+        for (Contato c : this.contatos) {
             System.out.println(c);
         }
     }
 
     public Contato buscarPorNome(String nome) {
-        for (Contato c : contatos) {
+        for (Contato c : this.contatos) {
             if (c.getNome().equals(nome)) {
                 return c;
             }
@@ -35,10 +35,10 @@ public class Agenda {
     public void removerContato(String nome) {
         Contato c = buscarPorNome(nome);
         if (c != null) {
-            contatos.remove(c);
+            this.contatos.remove(c);
             System.out.println(nome + " removido(a) da agenda");
         } else {
-            System.out.println(nome + " não está na agenda");
+            System.out.println(nome + " nao esta na agenda");
         }
     }
 

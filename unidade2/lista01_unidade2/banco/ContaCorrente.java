@@ -8,15 +8,15 @@ public class ContaCorrente extends Conta {
         this.limite = limite;
     }
 
-    public double getLimite() { return limite; }
+    public double getLimite() { return this.limite; }
 
     @Override
     public double saldoDisponivel() {
-        return getSaldo() + limite;
+        return getSaldo() + this.limite;
     }
 
     @Override
     public String toString() {
-        return super.toString() + " (limite: R$ " + limite + ")";
+        return super.toString() + " (limite: R$ " + this.limite + ")";
     }
 }

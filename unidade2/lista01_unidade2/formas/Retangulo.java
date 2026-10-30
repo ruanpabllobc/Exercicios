@@ -5,16 +5,16 @@ public class Retangulo extends Forma {
     private double altura;
 
     public Retangulo(double largura, double altura) {
-        super("Retângulo");
+        super("Retangulo");
         this.largura = largura;
         this.altura = altura;
     }
 
-    public double getLargura() { return largura; }
-    public double getAltura() { return altura; }
+    public double getLargura() { return this.largura; }
+    public double getAltura() { return this.altura; }
 
     @Override
     public double calcularArea() {
-        return largura * altura;
+        return this.largura * this.altura;
     }
 }

@@ -9,15 +9,15 @@ public class Funcionario {
         this.salarioBase = salarioBase;
     }
 
-    public String getNome() { return nome; }
-    public double getSalarioBase() { return salarioBase; }
+    public String getNome() { return this.nome; }
+    public double getSalarioBase() { return this.salarioBase; }
 
     public double calcularSalario() {
-        return salarioBase;
+        return this.salarioBase;
     }
 
     @Override
     public String toString() {
-        return nome + ": R$ " + calcularSalario();
+        return this.nome + ": R$ " + calcularSalario();
     }
 }

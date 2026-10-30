@@ -8,49 +8,49 @@ public class ListaCompras {
     }
 
     public void adicionarItem(String item) {
-        if (itens.contains(item)) {
-            System.out.println(item + " já está na lista");
+        if (this.itens.contains(item)) {
+            System.out.println(item + " ja esta na lista");
         } else {
-            itens.add(item);
+            this.itens.add(item);
         }
     }
 
     public void removerItem(String item) {
-        if (!itens.remove(item)) {
-            System.out.println(item + " não está na lista");
+        if (!this.itens.remove(item)) {
+            System.out.println(item + " nao esta na lista");
         }
     }
 
     public int quantidadeItens() {
-        return itens.size();
+        return this.itens.size();
     }
 
     public void substituirItem(int posicao, String novoItem) {
-        if (posicao < 0 || posicao >= itens.size()) {
-            System.out.println("Posição inválida: " + posicao);
+        if (posicao < 0 || posicao >= this.itens.size()) {
+            System.out.println("Posicao invalida: " + posicao);
         } else {
-            itens.set(posicao, novoItem);
+            this.itens.set(posicao, novoItem);
         }
     }
 
     public void moverParaTopo(String item) {
-        if (itens.remove(item)) {
-            itens.add(0, item);
+        if (this.itens.remove(item)) {
+            this.itens.add(0, item);
         } else {
-            System.out.println(item + " não está na lista");
+            System.out.println(item + " nao esta na lista");
         }
     }
 
     public void limpar() {
-        itens.clear();
+        this.itens.clear();
     }
 
     public void exibir() {
-        if (itens.isEmpty()) {
+        if (this.itens.isEmpty()) {
             System.out.println("Lista vazia");
         } else {
-            for (int i = 0; i < itens.size(); i++) {
-                System.out.println(i + " - " + itens.get(i));
+            for (int i = 0; i < this.itens.size(); i++) {
+                System.out.println(i + " - " + this.itens.get(i));
             }
         }
     }
@@ -58,24 +58,24 @@ public class ListaCompras {
     public static void main(String[] args) {
         ListaCompras lista = new ListaCompras();
         lista.adicionarItem("Arroz");
-        lista.adicionarItem("Feijão");
-        lista.adicionarItem("Café");
+        lista.adicionarItem("Feijao");
+        lista.adicionarItem("Cafe");
         lista.adicionarItem("Leite");
         lista.adicionarItem("Arroz");
         lista.exibir();
         System.out.println("Total de itens: " + lista.quantidadeItens());
 
         System.out.println();
-        lista.removerItem("Café");
-        lista.removerItem("Açúcar");
+        lista.removerItem("Cafe");
+        lista.removerItem("Acucar");
         lista.substituirItem(0, "Arroz integral");
-        lista.substituirItem(5, "Pão");
+        lista.substituirItem(5, "Pao");
         lista.exibir();
         System.out.println("Total de itens: " + lista.quantidadeItens());
 
         System.out.println();
         lista.moverParaTopo("Leite");
-        lista.moverParaTopo("Pão");
+        lista.moverParaTopo("Pao");
         lista.exibir();
 
         System.out.println();

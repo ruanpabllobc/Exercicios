@@ -5,16 +5,16 @@ public class Triangulo extends Forma {
     private double altura;
 
     public Triangulo(double base, double altura) {
-        super("Triângulo");
+        super("Triangulo");
         this.base = base;
         this.altura = altura;
     }
 
-    public double getBase() { return base; }
-    public double getAltura() { return altura; }
+    public double getBase() { return this.base; }
+    public double getAltura() { return this.altura; }
 
     @Override
     public double calcularArea() {
-        return base * altura / 2;
+        return this.base * this.altura / 2;
     }
 }

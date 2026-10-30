@@ -8,7 +8,7 @@ public class Vip extends Ingresso {
         this.adicional = adicional;
     }
 
-    public double getAdicional() { return adicional; }
+    public double getAdicional() { return this.adicional; }
 
     @Override
     public String getTipo() {
@@ -17,6 +17,6 @@ public class Vip extends Ingresso {
 
     @Override
     public double calcularPreco() {
-        return getPrecoBase() + adicional;
+        return getPrecoBase() + this.adicional;
     }
 }

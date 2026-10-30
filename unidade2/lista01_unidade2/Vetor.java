@@ -9,15 +9,15 @@ public class Vetor {
 
     public void exibir() {
         System.out.print("Valores:");
-        for (int i = 0; i < valores.length; i++) {
-            System.out.print(" " + valores[i]);
+        for (int i = 0; i < this.valores.length; i++) {
+            System.out.print(" " + this.valores[i]);
         }
         System.out.println();
     }
 
     public int buscarPosicao(int valor) {
-        for (int i = 0; i < valores.length; i++) {
-            if (valores[i] == valor) {
+        for (int i = 0; i < this.valores.length; i++) {
+            if (this.valores[i] == valor) {
                 return i;
             }
         }
@@ -25,8 +25,8 @@ public class Vetor {
     }
 
     public boolean estaOrdenado() {
-        for (int i = 0; i < valores.length - 1; i++) {
-            if (valores[i] > valores[i + 1]) {
+        for (int i = 0; i < this.valores.length - 1; i++) {
+            if (this.valores[i] > this.valores[i + 1]) {
                 return false;
             }
         }
@@ -34,11 +34,14 @@ public class Vetor {
     }
 
     public void inverter() {
-        for (int i = 0; i < valores.length / 2; i++) {
-            int outra = valores.length - 1 - i;
-            int aux = valores[i];
-            valores[i] = valores[outra];
-            valores[outra] = aux;
+        int inicio = 0;
+        int fim = this.valores.length - 1;
+        while (inicio < fim) {
+            int aux = this.valores[inicio];
+            this.valores[inicio] = this.valores[fim];
+            this.valores[fim] = aux;
+            inicio++;
+            fim--;
         }
     }
 
@@ -50,27 +53,27 @@ public class Vetor {
         int[] dados = new int[quantidade];
 
         for (int i = 0; i < dados.length; i++) {
-            System.out.print("Digite o valor da posição " + i + ": ");
+            System.out.print("Digite o valor da posicao " + i + ": ");
             dados[i] = sc.nextInt();
         }
 
         Vetor v = new Vetor(dados);
         v.exibir();
-        System.out.println("Está em ordem crescente? " + v.estaOrdenado());
+        System.out.println("Esta em ordem crescente? " + v.estaOrdenado());
 
         System.out.print("Valor a buscar: ");
         int busca = sc.nextInt();
         int posicao = v.buscarPosicao(busca);
         if (posicao == -1) {
-            System.out.println(busca + " não foi encontrado");
+            System.out.println(busca + " nao foi encontrado");
         } else {
-            System.out.println(busca + " está na posição " + posicao);
+            System.out.println(busca + " esta na posicao " + posicao);
         }
 
         System.out.println("Invertendo...");
         v.inverter();
         v.exibir();
-        System.out.println("Está em ordem crescente? " + v.estaOrdenado());
+        System.out.println("Esta em ordem crescente? " + v.estaOrdenado());
 
         sc.close();
     }

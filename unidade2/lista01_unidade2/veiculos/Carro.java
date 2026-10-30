@@ -8,10 +8,10 @@ public class Carro extends Veiculo {
         this.numeroPortas = numeroPortas;
     }
 
-    public int getNumeroPortas() { return numeroPortas; }
+    public int getNumeroPortas() { return this.numeroPortas; }
 
     @Override
     public String toString() {
-        return super.toString() + "\nPortas: " + numeroPortas;
+        return super.toString() + "\nPortas: " + this.numeroPortas;
     }
 }

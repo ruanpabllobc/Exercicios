@@ -7,7 +7,7 @@ public abstract class Forma {
         this.nome = nome;
     }
 
-    public String getNome() { return nome; }
+    public String getNome() { return this.nome; }
 
     public abstract double calcularArea();
 
@@ -17,6 +17,6 @@ public abstract class Forma {
 
     @Override
     public String toString() {
-        return nome + " - Área: " + calcularArea();
+        return this.nome + " - Area: " + calcularArea();
     }
 }

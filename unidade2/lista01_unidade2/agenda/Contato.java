@@ -9,11 +9,11 @@ public class Contato {
         this.telefone = telefone;
     }
 
-    public String getNome() { return nome; }
-    public String getTelefone() { return telefone; }
+    public String getNome() { return this.nome; }
+    public String getTelefone() { return this.telefone; }
 
     @Override
     public String toString() {
-        return nome + " - " + telefone;
+        return this.nome + " - " + this.telefone;
     }
 }

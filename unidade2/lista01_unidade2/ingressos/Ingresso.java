@@ -9,8 +9,8 @@ public abstract class Ingresso {
         this.precoBase = precoBase;
     }
 
-    public String getEvento() { return evento; }
-    public double getPrecoBase() { return precoBase; }
+    public String getEvento() { return this.evento; }
+    public double getPrecoBase() { return this.precoBase; }
 
     public abstract String getTipo();
 
@@ -18,6 +18,6 @@ public abstract class Ingresso {
 
     @Override
     public String toString() {
-        return getTipo() + " - " + evento + ": R$ " + calcularPreco();
+        return getTipo() + " - " + this.evento + ": R$ " + calcularPreco();
     }
 }

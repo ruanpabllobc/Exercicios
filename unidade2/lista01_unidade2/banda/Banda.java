@@ -9,28 +9,28 @@ public class Banda {
         this.instrumentos = instrumentos;
     }
 
-    public String getNome() { return nome; }
+    public String getNome() { return this.nome; }
 
     public void apresentar() {
-        System.out.println("Banda " + nome + " tocando:");
-        for (int i = 0; i < instrumentos.length; i++) {
-            instrumentos[i].tocar();
+        System.out.println("Banda " + this.nome + " tocando:");
+        for (int i = 0; i < this.instrumentos.length; i++) {
+            this.instrumentos[i].tocar();
         }
     }
 
     public void solo(int posicao) {
-        if (posicao < 0 || posicao >= instrumentos.length) {
-            System.out.println("Posição inválida: " + posicao);
+        if (posicao < 0 || posicao >= this.instrumentos.length) {
+            System.out.println("Posicao invalida: " + posicao);
         } else {
             System.out.print("Solo! ");
-            instrumentos[posicao].tocar();
+            this.instrumentos[posicao].tocar();
         }
     }
 
     public int contarPorFamilia(String familia) {
         int quantidade = 0;
-        for (int i = 0; i < instrumentos.length; i++) {
-            if (instrumentos[i].getFamilia().equals(familia)) {
+        for (int i = 0; i < this.instrumentos.length; i++) {
+            if (this.instrumentos[i].getFamilia().equals(familia)) {
                 quantidade++;
             }
         }
@@ -39,7 +39,7 @@ public class Banda {
 
     public static void main(String[] args) {
         Instrumento[] instrumentos = {
-            new Violao("Violão"),
+            new Violao("Violao"),
             new Bateria("Bateria"),
             new Flauta("Flauta"),
             new Violao("Guitarra")
