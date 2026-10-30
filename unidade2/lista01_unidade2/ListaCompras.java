@@ -8,11 +8,17 @@ public class ListaCompras {
     }
 
     public void adicionarItem(String item) {
-        itens.add(item);
+        if (itens.contains(item)) {
+            System.out.println(item + " já está na lista");
+        } else {
+            itens.add(item);
+        }
     }
 
     public void removerItem(String item) {
-        itens.remove(item);
+        if (!itens.remove(item)) {
+            System.out.println(item + " não está na lista");
+        }
     }
 
     public int quantidadeItens() {
@@ -20,7 +26,19 @@ public class ListaCompras {
     }
 
     public void substituirItem(int posicao, String novoItem) {
-        itens.set(posicao, novoItem);
+        if (posicao < 0 || posicao >= itens.size()) {
+            System.out.println("Posição inválida: " + posicao);
+        } else {
+            itens.set(posicao, novoItem);
+        }
+    }
+
+    public void moverParaTopo(String item) {
+        if (itens.remove(item)) {
+            itens.add(0, item);
+        } else {
+            System.out.println(item + " não está na lista");
+        }
     }
 
     public void limpar() {
@@ -43,14 +61,22 @@ public class ListaCompras {
         lista.adicionarItem("Feijão");
         lista.adicionarItem("Café");
         lista.adicionarItem("Leite");
+        lista.adicionarItem("Arroz");
         lista.exibir();
         System.out.println("Total de itens: " + lista.quantidadeItens());
 
         System.out.println();
         lista.removerItem("Café");
+        lista.removerItem("Açúcar");
         lista.substituirItem(0, "Arroz integral");
+        lista.substituirItem(5, "Pão");
         lista.exibir();
         System.out.println("Total de itens: " + lista.quantidadeItens());
+
+        System.out.println();
+        lista.moverParaTopo("Leite");
+        lista.moverParaTopo("Pão");
+        lista.exibir();
 
         System.out.println();
         lista.limpar();

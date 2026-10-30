@@ -10,7 +10,11 @@ public class Agenda {
     }
 
     public void adicionarContato(Contato c) {
-        contatos.add(c);
+        if (buscarPorNome(c.getNome()) != null) {
+            System.out.println(c.getNome() + " já está na agenda");
+        } else {
+            contatos.add(c);
+        }
     }
 
     public void listarContatos() {
@@ -28,15 +32,6 @@ public class Agenda {
         return null;
     }
 
-    public void exibirBusca(String nome) {
-        Contato c = buscarPorNome(nome);
-        if (c != null) {
-            System.out.println("Busca por " + nome + ": " + c.getTelefone());
-        } else {
-            System.out.println("Busca por " + nome + ": contato não encontrado");
-        }
-    }
-
     public void removerContato(String nome) {
         Contato c = buscarPorNome(nome);
         if (c != null) {
@@ -52,11 +47,8 @@ public class Agenda {
         agenda.adicionarContato(new Contato("Ana", "(84) 99999-1111"));
         agenda.adicionarContato(new Contato("Bruno", "(84) 98888-2222"));
         agenda.adicionarContato(new Contato("Carla", "(84) 97777-3333"));
+        agenda.adicionarContato(new Contato("Ana", "(84) 96666-4444"));
         agenda.listarContatos();
-
-        System.out.println();
-        agenda.exibirBusca("Bruno");
-        agenda.exibirBusca("Daniel");
 
         System.out.println();
         agenda.removerContato("Bruno");

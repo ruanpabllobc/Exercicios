@@ -3,3 +3,6 @@
 
 # Arquivos compilados
 *.class
+
+# Material do professor (não publicar)
+perguntas_avaliacao2.md

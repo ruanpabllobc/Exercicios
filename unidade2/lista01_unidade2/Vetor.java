@@ -7,20 +7,39 @@ public class Vetor {
         this.valores = valores;
     }
 
-    public void exibirInvertido() {
-        for (int i = valores.length - 1; i >= 0; i--) {
-            System.out.println(valores[i]);
+    public void exibir() {
+        System.out.print("Valores:");
+        for (int i = 0; i < valores.length; i++) {
+            System.out.print(" " + valores[i]);
         }
+        System.out.println();
     }
 
-    public int contarPares() {
-        int pares = 0;
+    public int buscarPosicao(int valor) {
         for (int i = 0; i < valores.length; i++) {
-            if (valores[i] % 2 == 0) {
-                pares++;
+            if (valores[i] == valor) {
+                return i;
             }
         }
-        return pares;
+        return -1;
+    }
+
+    public boolean estaOrdenado() {
+        for (int i = 0; i < valores.length - 1; i++) {
+            if (valores[i] > valores[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void inverter() {
+        for (int i = 0; i < valores.length / 2; i++) {
+            int outra = valores.length - 1 - i;
+            int aux = valores[i];
+            valores[i] = valores[outra];
+            valores[outra] = aux;
+        }
     }
 
     public static void main(String[] args) {
@@ -28,19 +47,30 @@ public class Vetor {
 
         System.out.print("Quantos valores deseja digitar? ");
         int quantidade = sc.nextInt();
-        sc.nextLine();
         int[] dados = new int[quantidade];
 
         for (int i = 0; i < dados.length; i++) {
             System.out.print("Digite o valor da posição " + i + ": ");
             dados[i] = sc.nextInt();
-            sc.nextLine();
         }
 
         Vetor v = new Vetor(dados);
-        System.out.println("Valores em ordem inversa:");
-        v.exibirInvertido();
-        System.out.println("Quantidade de pares: " + v.contarPares());
+        v.exibir();
+        System.out.println("Está em ordem crescente? " + v.estaOrdenado());
+
+        System.out.print("Valor a buscar: ");
+        int busca = sc.nextInt();
+        int posicao = v.buscarPosicao(busca);
+        if (posicao == -1) {
+            System.out.println(busca + " não foi encontrado");
+        } else {
+            System.out.println(busca + " está na posição " + posicao);
+        }
+
+        System.out.println("Invertendo...");
+        v.inverter();
+        v.exibir();
+        System.out.println("Está em ordem crescente? " + v.estaOrdenado());
 
         sc.close();
     }

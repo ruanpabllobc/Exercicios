@@ -14,9 +14,4 @@ public class Gerente extends Funcionario {
     public double calcularSalario() {
         return getSalarioBase() + bonus;
     }
-
-    @Override
-    public String toString() {
-        return super.toString() + "\nBônus: R$ " + bonus;
-    }
 }
